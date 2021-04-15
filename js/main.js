@@ -4,16 +4,11 @@ window.addEventListener('DOMContentLoaded', function () {
     document.querySelector('#burger').classList.toggle('menu__btn');
     document.querySelector('#burger').classList.toggle('menu__btn-close');
     });
-    document.querySelector('#burger').addEventListener('keypress', function () {
-      document.querySelector('#menu').classList.toggle('menu__box_visible');
-      document.querySelector('#burger').classList.toggle('menu__btn');
-      document.querySelector('#burger').classList.toggle('menu__btn-close');
-      });
-      document.querySelector('.btn__search').addEventListener("focusin", function () {
-        document.querySelector('#menu').classList.remove('menu__box_visible');
-        document.querySelector('#burger').classList.remove('menu__btn-close');
-        document.querySelector('#burger').classList.add('menu__btn');
-      })
+   document.querySelector('#burger').addEventListener('keypress', function () {
+    document.querySelector('#menu').classList.toggle('menu__box_visible');
+    document.querySelector('#burger').classList.toggle('menu__btn');
+    document.querySelector('#burger').classList.toggle('menu__btn-close');
+    });
 
 
   // slider

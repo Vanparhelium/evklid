@@ -118,8 +118,6 @@ textarea:active {
 .footer__logotipe:focus {
   -webkit-filter: drop-shadow(0 0 2px var(--yellow));
           filter: drop-shadow(0 0 2px var(--yellow));
-  transition: -webkit-filter .3s ease;
-  transition: filter .3s ease;
   transition: filter .3s ease, -webkit-filter .3s ease;
 }
 
@@ -145,6 +143,7 @@ textarea:active {
   display: none;
   mask-image: url('../img/burger.svg');
   -webkit-mask-image: url('../img/burger.svg');
+
 }
 
 .menu__btn:hover,
@@ -152,6 +151,9 @@ textarea:active {
   mask-image: url('../img/burger1.svg');
   -webkit-mask-image: url('../img/burger1.svg');
   transform: rotateY(160deg);
+  transition-property: mask-image, -webkit-mask-image;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 
 .menu__btn-close {
@@ -249,7 +251,6 @@ textarea:active {
 }
 
 .swiper-wrapper {
-  /* margin-top: 1px; */
   height: 620px;
   position: absolute;
   z-index: -1;
@@ -279,7 +280,10 @@ textarea:active {
 }
 
 .swiper-pagination {
-  display: none;
+  display: initial;
+  margin-left: 50%;
+  left: -62px;
+  bottom: 26px;
 }
 
 .swiper-pagination-bullet {
@@ -349,11 +353,32 @@ textarea:active {
 
 .i-title {
   display: inline-block;
+  position: relative;
   vertical-align: -2px;
   height: 16px;
   width: 16px;
   margin-left: 5px;
+  cursor: pointer;
   background: url('../img/i_title.svg') center no-repeat;
+}
+
+.popup {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  width: 250px;
+  padding: 15px;
+  border-radius: 5px;
+  background: var(--white);
+  color: var(--yellow);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.i-title:hover .popup,
+.i-title:focus .popup {
+  opacity: 1;
 }
 
 .about__block {
@@ -1093,7 +1118,7 @@ a.ui-button:active,
   }
 
   .menu__box {
-    display: none;
+    display: block;
     position: absolute;
     z-index: 2;
     top: -1000%;
@@ -1104,14 +1129,13 @@ a.ui-button:active,
     padding: 80px 0;
     background-color: #FFFFFF;
     box-shadow: 0 5px 40px rgba(0, 0, 0, .1);
-    transform-origin: left;
+    transform-origin: top;
     transition-duration: 0.4s;
     transition-timing-function: ease-in-out;
   }
 
   .menu__box_visible {
     top: 0;
-    display: block;
   }
 
   .header__nav-item {
@@ -1143,13 +1167,6 @@ a.ui-button:active,
   .slide__hero1 {
     background: url('../img/balconies_1024w.jpg') bottom center no-repeat;
     background-size: cover;
-  }
-
-  .swiper-pagination {
-    display: initial;
-    margin-left: 50%;
-    left: -62px;
-    bottom: 26px;
   }
 
   .hero__text {
@@ -1299,7 +1316,7 @@ a.ui-button:active,
     font-weight: 400;
     font-size: 14px;
     line-height: 28px;
-    padding-bottom: 0px;
+    padding-bottom: 0;
   }
 
 /* footer  */
@@ -1585,11 +1602,7 @@ a.ui-button:active,
   }
 
   .swiper-container {
-    height: 100%;
-  }
-
-  .swiper-pagination {
-    display: none;
+    height: 444px;
   }
 
   .hero__baner {
@@ -1599,13 +1612,19 @@ a.ui-button:active,
   }
 
   .hero__title {
-    font-size: 46px;
-    line-height: 60px;
+    font-size: 38px;
+    line-height: 46px;
   }
 
   .hero__text {
     font-size: 18px;
-    line-height: 30px;
+    line-height: 24px;
+  }
+
+  .btn__hero {
+    margin-top: 35px;
+    padding: 12px 28px 14px 28px;
+    font-size: 14px;
   }
 
   /* about */
@@ -1683,6 +1702,14 @@ a.ui-button:active,
   }
 
   /* section__hero */
+  .swiper-container {
+    height: 335px;
+  }
+
+  .swiper-pagination {
+    display: none;
+  }
+
   .hero__baner {
     padding: 32px 40px 40px;
     background: url('../img/balconies_320w.jpg') center center no-repeat;
@@ -1691,19 +1718,15 @@ a.ui-button:active,
   }
 
   .hero__title {
-    font-size: 38px;
-    line-height: 46px;
-  }
-
-  .hero__text {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 24px;
   }
 
-  .btn__hero {
-    margin-top: 35px;
-    padding: 12px 28px 14px 28px;
-    font-size: 14px;
+  .hero__text {
+    margin-top: 7px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
   }
 
   /* about */
@@ -1762,18 +1785,6 @@ a.ui-button:active,
     order: 0;
   }
 
-  .hero__title {
-    font-size: 20px;
-    line-height: 24px;
-  }
-
-  .hero__text {
-    margin-top: 7px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-  }
-
   .menu__btn {
     width: 25px;
     height: 19px;
@@ -1785,13 +1796,12 @@ a.ui-button:active,
   }
 
   .menu__box {
-    height: 307px;
+    height: 331px;
     width: 200px;
     padding: 0;
     left: auto;
     right: 0;
   }
-
 
   .header__nav-item {
     margin-top: 66px;
@@ -1807,6 +1817,10 @@ a.ui-button:active,
 
   .btn__search {
     display: none;
+  }
+
+  .swiper-container {
+    height: 262px;
   }
 
   /* section about */
@@ -1940,6 +1954,10 @@ a.ui-button:active,
   .header__container {
     height: 45px;
     padding: 0;
+  }
+
+  .menu__box {
+    height: 307px;
   }
 
   /* hero */

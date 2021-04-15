@@ -8,16 +8,13 @@
   <title>Евклид</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script defer src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js"></script>
+  <script defer src="js/main.js"></script>
 </head>
 
 <body>
@@ -26,7 +23,7 @@
       <div class="header__container">
         <a href="" class="header__logo"><img src="img/logo1.png" alt="Евклид проектные сиситемы"></a>
         <div class="hamburger-menu">
-          <div aria-label="Кнопка меню" role="tab" id="burger" class="menu__btn burger" tabindex="0"></div>
+          <div id="burger" class="menu__btn burger" tabindex="0" aria-label="Кнопка меню"></div>
           <ul id="menu" class="header__nav-list menu__box">
             <li class="header__nav-item">
               <a href="" class="nav__link">О нас</a>
@@ -78,7 +75,11 @@
           своей масштабности и грандиозности. А также диаграммы связей могут быть описаны максимально подробно. Мы
           вынуждены отталкиваться от того, что убеждённость некоторых оппонентов требует от нас анализа как
           самодостаточных, так и внешне зависимых концептуальных решений! Следует отметить, что высококачественный
-          прототип <span class="i-title" tabindex="0"></span> будущего проекта предопределяет высокую востребованность позиций,
+          прототип
+           <span class="i-title" tabindex="0">
+            <span class="popup">Ты хороший человек, закажи сайт !)</span>
+          </span>
+          будущего проекта предопределяет высокую востребованность позиций,
           занимаемых участниками в отношении поставленных задач. Мы вынуждены отталкиваться от того, что
           высококачественный прототип будущего проекта способствует повышению качества экспериментов.</p>
         <div class="about__block">
