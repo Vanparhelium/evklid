@@ -365,7 +365,7 @@ textarea:active {
 .popup {
   position: absolute;
   top: -100px;
-  left: 20px;
+  left: -235px;
   width: 250px;
   padding: 15px;
   border-radius: 5px;
