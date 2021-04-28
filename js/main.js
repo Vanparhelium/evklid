@@ -4,11 +4,11 @@ window.addEventListener('DOMContentLoaded', function () {
     document.querySelector('#burger').classList.toggle('menu__btn');
     document.querySelector('#burger').classList.toggle('menu__btn-close');
     });
-   document.querySelector('#burger').addEventListener('keypress', function () {
+  document.querySelector('#burger').addEventListener('keypress', function () {
     document.querySelector('#menu').classList.toggle('menu__box_visible');
-    document.querySelector('#burger').classList.toggle('menu__btn');
-    document.querySelector('#burger').classList.toggle('menu__btn-close');
-    });
+   document.querySelector('#burger').classList.toggle('menu__btn');
+   document.querySelector('#burger').classList.toggle('menu__btn-close');
+   });
 
 
   // slider

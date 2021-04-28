@@ -63,28 +63,12 @@ img {
     max-width: 100%;
   }
 
-button:active,
-button:focus {
-    outline: none;
-  }
 
-a:active,
-a:focus {
-  outline: none;
-}
 
 input,
 textarea {
-  outline:none;
   cursor: pointer;
 }
-
-input:active,
-textarea:active {
-  outline:none;
-}
-
-:focus {outline:none;}
 
 .container {
   max-width: 1800px;
@@ -176,8 +160,10 @@ textarea:active {
   transition: background-color .3s ease-in-out;
 }
 
+.hamburger-menu:hover .burger,
+.hamburger-menu:focus .burger,
 .burger:hover,
-.burger:focus{
+.burger:focus {
   background-color: var(--yellow);
 }
 
@@ -372,6 +358,7 @@ textarea:active {
   background: var(--white);
   color: var(--yellow);
   text-align: center;
+  visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
@@ -379,6 +366,7 @@ textarea:active {
 .i-title:hover .popup,
 .i-title:focus .popup {
   opacity: 1;
+  visibility: visible;
 }
 
 .about__block {
@@ -658,24 +646,12 @@ textarea:active {
 
 .circle {
   position: relative;
-  display: table;
-  width: 50px;
-  height: 50px;
+  display: block;
+  min-width: 50px;
+  min-height: 50px;
   margin-left: auto;
-  border-radius: 50%;
-  background-color: #ECECEC;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.circle::after,
-.circle::before {
-  position: absolute;
-  content: '';
-  top: 50%;
-  left: 10px;
-  width: 30px;
-  height: 1px;
-  background-color: #666;
+  background: url('../img/+х.png') center center no-repeat;
+  background-size: contain;
 }
 
 .circle::before {
@@ -684,7 +660,8 @@ textarea:active {
 
 .accordion__item_line:hover .circle,
 .ui-state-focus:hover .circle {
-  background-color: #d2d2d2;
+  background: url('../img/+х\ hover.png') center center no-repeat;
+  background-size: contain;
 }
 
 .slash {
@@ -1120,6 +1097,7 @@ a.ui-button:active,
   .menu__box {
     display: block;
     position: absolute;
+    visibility: hidden;
     z-index: 2;
     top: -1000%;
     left: 0;
@@ -1135,6 +1113,7 @@ a.ui-button:active,
   }
 
   .menu__box_visible {
+    visibility: visible;
     top: 0;
   }
 
@@ -1899,19 +1878,8 @@ a.ui-button:active,
   }
 
   .circle {
-    width: 30px;
-    height: 30px;
-  }
-
-  .circle::after,
-  .circle::before {
-    position: absolute;
-    content: '';
-    top: 50%;
-    left: 6px;
-    width: 18px;
-    height: 1px;
-    background-color: #666;
+    min-width:  30px;
+    min-height: 30px;
   }
 
   .accordion__item:nth-child(n) .circle {
